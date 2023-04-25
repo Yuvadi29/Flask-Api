@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
@@ -8,7 +7,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
 app = Flask(__name__)
-CORS(app)
 
 startup_data = pd.read_csv('mpj.csv')
 startup_data = startup_data.dropna()
